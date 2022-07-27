@@ -1,6 +1,19 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
+
+// Icons
+import SmCamping from "/public/assets/icons/sm_camping.svg";
+import SmCampfire from "/public/assets/icons/sm_campfire.svg";
+import SmEmbung from "/public/assets/icons/sm_embung.svg";
+import SmHiking from "/public/assets/icons/sm_hiking.svg";
+import SmJeep from "/public/assets/icons/sm_jeep.svg";
+import SmPlant from "/public/assets/icons/sm_plant.svg";
+import SmSunset from "/public/assets/icons/sm_sunset.svg";
+import SmWaterfall from "/public/assets/icons/sm_waterfall.svg";
+
 import {
   Arrow,
   Plant,
@@ -10,9 +23,11 @@ import {
   Camping,
   CampFire,
   Embung,
+  Jeep,
 } from "./icons";
-import Destination from "/public/assets/static/destination.svg";
-import Culinary from "/public/assets/static/culinary.svg";
+import GAP from "/public/assets/GAP-sunsire.jpg";
+import EmbungNglanggeran from "/public/assets/embung-sunrise.jpg";
+import KedungKandang from "/public/assets/kedung-rise.jpg";
 
 const ExploreNglanggeran = () => {
   return (
@@ -21,85 +36,58 @@ const ExploreNglanggeran = () => {
         <Title>
           <h2 className="main-title">Explore Nglanggeran</h2>
           <p className="sub-title">
-            Explore wisata dan kuliner yang ada di Desa Wisata Nglanggeran
+            Explore Nglanggeran and Find Various Natural views and the
+            traditions
           </p>
         </Title>
         <DestinationContainer>
-          <Image
-            src={Destination}
-            alt="destination"
-            height={463.34}
-            width={318}
-          />
-          <Description>
-            <h3 className="tourism-title">Tourism Destination</h3>
-            <p>
-              Nglanggeran, located 25 km away from Yogyakarta city, has
-              developed the concept of Community-based tourism. The majority of
-              the population work as farmers, plantation workers and ranchers.
-              The beauty of its natural landscape and the uniqueness of Gunung
-              Api Purba (ancient volcano) are the main attraction in
-              Nglanggeran. This attraction is also a part of the UNESCO Global
-              Geopark of Mount Sewu.
-            </p>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Gunung Api Purba</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Embung Nglanggeran</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Air Terjun Kedung Kandhang</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-          </Description>
+          <DestinationGAP>
+            <Description>
+              <p className="title">Gunung Api Purba</p>
+              <Badge className="badge">
+                <Image src={SmHiking} alt="cardBadge1" width={24} height={24} />
+                <Image src={SmSunset} alt="cardBadge2" width={24} height={24} />
+                <Image src={SmJeep} alt="cardBadge3" width={24} height={24} />
+              </Badge>
+            </Description>
+          </DestinationGAP>
+          <DestinationEmbung>
+            <Description>
+              <p className="title">Embung Nglanggeran</p>
+              <Badge className="badge">
+                <Image src={SmEmbung} alt="cardBadge1" width={24} height={24} />
+                <Image src={SmSunset} alt="cardBadge2" width={24} height={24} />
+                <Image src={SmPlant} alt="cardBadge3" width={24} height={24} />
+              </Badge>
+            </Description>
+          </DestinationEmbung>
+          <DestinationKedungKandhang>
+            <Description>
+              <p className="title">Air Terjun Kedung Kandhang</p>
+              <Badge className="badge">
+                <Image
+                  src={SmWaterfall}
+                  alt="cardBadge1"
+                  width={24}
+                  height={24}
+                />
+                <Image src={SmSunset} alt="cardBadge2" width={24} height={24} />
+                <Image
+                  src={SmCamping}
+                  alt="cardBadge3"
+                  width={24}
+                  height={24}
+                />
+                <Image
+                  src={SmCampfire}
+                  alt="cardBadge3"
+                  width={24}
+                  height={24}
+                />
+              </Badge>
+            </Description>
+          </DestinationKedungKandhang>
         </DestinationContainer>
-        <CulinaryContainer>
-          <Description>
-            <h3 className="culinary-title">Culinary and UMKM</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien
-              lacus auctor sed pretium pellentesque convallis imperdiet. Nunc,
-              aenean quam enim ultricies integer. Lectus mi quisque rhoncus est
-              massa. At nec libero integer sapien aliquam eu. Semper interdum
-              auctor cras faucibus. Integer molestie adipiscing id aliquet ipsum
-              eget eget vulputate. Mauris.
-            </p>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Griya Coklat Nglaggeran</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Pawon Purba</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-            <ExploreButton>
-              <span className="Description">
-                <h3 className="title">Soto Mbak Jam</h3>
-                <Badge className="BadgeIndicator"></Badge>
-              </span>
-              <Arrow />
-            </ExploreButton>
-          </Description>
-          <Image src={Culinary} alt="destination" height={463.34} width={318} />
-        </CulinaryContainer>
       </ExploreWrapper>
     </ExploreContainer>
   );
@@ -111,8 +99,26 @@ const ExploreContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: auto;
-  margin: 5rem 0 5rem 0;
+  height: 55rem;
+  margin: 8rem 0 0 0;
+  background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 0.7),
+      rgba(18, 18, 18, 0.7)
+    ),
+    url(${GAP.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  color: #ffffff;
+  @media screen and (max-width: 768px) {
+    height: calc(100% + 5rem);
+    padding: 5rem 0;
+    margin: 0;
+  }
 `;
 const Title = styled.div`
   display: flex;
@@ -125,10 +131,9 @@ const Title = styled.div`
     margin: 0;
   }
   .sub-title {
-    margin: 0.5rem 0 5rem 0;
-    color: #7bae23;
-    font-size: 1rem;
-    font-weight: 600;
+    margin: 0.5rem 0 0 0;
+    font-size: 1.15rem;
+    font-weight: 500;
   }
 `;
 const ExploreWrapper = styled.div`
@@ -136,55 +141,126 @@ const ExploreWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 65rem;
+  width: 74rem;
   height: auto;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 1rem;
+  }
 `;
 const DestinationContainer = styled.div`
-  display: flex;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
   height: auto;
+  margin-top: 4rem;
   .tourism-title {
     margin: 0;
   }
 `;
-const CulinaryContainer = styled.div`
+
+const DestinationGAP = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 5rem;
-  width: 100%;
-  height: auto;
-  .culinary-title {
-    margin: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 24.688rem;
+  width: 17.188rem;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 0.3),
+      rgba(18, 18, 18, 0.3)
+    ),
+    url(${GAP.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  cursor: pointer;
+  :hover {
+    scale: 1.02;
   }
 `;
+const DestinationEmbung = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 24.688rem;
+  width: 17.188rem;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 0.3),
+      rgba(18, 18, 18, 0.3)
+    ),
+    url(${EmbungNglanggeran.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  cursor: pointer;
+  :hover {
+    scale: 1.02;
+  }
+`;
+const DestinationKedungKandhang = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 24.688rem;
+  width: 17.188rem;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(
+      0deg,
+      rgba(18, 18, 18, 0.3),
+      rgba(18, 18, 18, 0.3)
+    ),
+    url(${KedungKandang.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  cursor: pointer;
+  :hover {
+    scale: 1.02;
+  }
+`;
+
 const Description = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40rem;
-`;
-const ExploreButton = styled.div`
-  border: 1px solid #7bae23;
-  width: 31.25rem;
-  height: 4.438rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.3rem;
-  margin-top: 0.5rem;
-
-  span {
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  padding: 1.15rem;
+  color: #ffffff;
+  .title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
-  h3 {
+  .badge {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 `;
 const Badge = styled.div``;
 
 export default ExploreNglanggeran;
-
-// icons

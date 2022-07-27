@@ -1,43 +1,108 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
-const Header = ({ state }) => {
-  const router = useRouter();
-  return (
-    <HeaderContainter>
-      <HeaderContent>
-        <Logo>
-          <p className="LogoText">Desa Wisata Nglaggeran</p>
-        </Logo>
-        <Navigation>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-          <Button type="button" onClick={() => router.push("/about")}>
-            Click me
-          </Button>
-        </Navigation>
-      </HeaderContent>
-    </HeaderContainter>
-  );
-};
+// components
+import SideDrawer from "/components/mobile/sideDrawer";
+// Icons
+import MenuBars from "/components/mobile/menuBars";
+import { LogoNdesawisata } from "./icons";
 
+class Header extends React.Component {
+  //State To to hide Nav when scrolling down
+
+  constructor(props) {
+    super(props);
+    this.state = { show: true, scrollPos: 0 };
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  handleScroll = () => {
+    console.log(document.body.getBoundingClientRect());
+    this.setState({
+      scrollPos: document.body.getBoundingClientRect().top,
+      show: document.body.getBoundingClientRect().top > this.state.scrollPos,
+    });
+  };
+
+  state = {
+    sideMenuOpen: false,
+  };
+  sideMenuToggleHandler = () => {
+    this.setState((prevState) => {
+      return { sideMenuOpen: !prevState.sideMenuOpen };
+    });
+  };
+
+  render() {
+    let SideMenu;
+    if (this.state.sideMenuOpen) {
+      SideMenu = <SideDrawer />;
+    }
+
+    return (
+      <HeaderContainter>
+        <HeaderContent className={this.state.show ? "active" : "hidden"}>
+          <Link href="/">
+            <a>
+              <Logo>
+                <LogoNdesawisata />
+              </Logo>
+            </a>
+          </Link>
+          <MenuBars click={this.sideMenuToggleHandler} />
+          {SideMenu}
+          <Navigation>
+            <Link href="/">
+              <a>
+                <Button type="button">Home</Button>
+              </a>
+            </Link>
+            <Link href="about">
+              <a>
+                <Button type="button">About Us</Button>
+              </a>
+            </Link>
+            <Link href="destinasi">
+              <a>
+                <Button type="button">Destinasi Wisata</Button>
+              </a>
+            </Link>
+            <Link href="about">
+              <a>
+                <Button type="button">Wisata Edukasi</Button>
+              </a>
+            </Link>
+            <Link href="/homestay">
+              <a>
+                <Button type="button">Homestay</Button>
+              </a>
+            </Link>
+            <Link href="/events">
+              <a>
+                <Button type="button">Event</Button>
+              </a>
+            </Link>
+            <Link href="/posts">
+              <a>
+                <Button type="button">Blog</Button>
+              </a>
+            </Link>
+            <Link href="/about">
+              <a>
+                <Button type="button">Oleh-Oleh</Button>
+              </a>
+            </Link>
+          </Navigation>
+        </HeaderContent>
+      </HeaderContainter>
+    );
+  }
+}
 export default Header;
 
 const HeaderContainter = styled.div`
@@ -65,41 +130,49 @@ const HeaderContent = styled.div`
   height: 4rem;
   padding: 0 2rem 0 2rem;
   width: 100%;
-  background: #7bae23;
+  background: #ffffff;
+  border-bottom: 0.5px solid #e6e6e6;
 `;
 const Navigation = styled.nav`
   display: flex;
-  width: 53rem;
+  width: 50rem;
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-around;
-  font-weight: 500;
   & > a {
-    color: white;
+    color: #121212;
     text-decoration: none;
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    right: 0;
+    top: 3.5rem;
+    width: calc(100% + 20%);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
   }
 `;
 const Logo = styled.button`
   background: transparent;
-  color: white;
   border: none;
-  font-size: 1.15rem;
-  font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  .LogoText {
-    margin-left: 0.3rem;
-  }
+  cursor: pointer;
 `;
 
 const Button = styled.button`
   background: transparent;
   border: none;
-  color: white;
+  color: #121212;
+  font-size: 1rem;
+  font-weight: 400;
 
   :hover {
     cursor: pointer;
-    color: #888;
+    color: #7bae23;
+    font-weight: 500;
   }
 `;
