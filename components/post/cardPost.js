@@ -3,18 +3,22 @@ import Link from "next/link";
 import NextImage from "./image";
 import Image from "next/image";
 
-const Card = ({ articles, imageurl }) => {
-  //   console.log(articles);
+const Card = ({ articles }) => {
+  // console.log(imageurl);
+
   return (
     <Link href={`/posts/${articles.attributes.slug}`}>
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">
-            {/* <Image src={} /> */}
+            {/* <Image
+              src={imageurl}
+              alt="thumbnail"
+            /> */}
             {/* <div>
               {imageurl.data?.map((thumbnails) => (
                 <>
-                  <NextImage image={thumbnails.attributes} />
+                  <NextImage image={thumbnails.data.attributes.url} />
                 </>
               ))}
             </div> */}

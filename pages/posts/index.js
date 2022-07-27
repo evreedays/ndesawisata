@@ -21,7 +21,7 @@ export async function getStaticProps() {
 }
 
 export default function Index({ articles, error }) {
-  console.log(articles.data);
+  // console.log(articles.data);
   if (error) {
     return <div>An error occured: {error.message}</div>;
   }
