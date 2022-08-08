@@ -41,7 +41,7 @@ const ExploreNglanggeran = () => {
           </p>
         </Title>
         <DestinationContainer>
-          <DestinationGAP>
+          <DestinationGAP data-aos="fade-up">
             <Description>
               <p className="title">Gunung Api Purba</p>
               <Badge className="badge">
@@ -51,7 +51,7 @@ const ExploreNglanggeran = () => {
               </Badge>
             </Description>
           </DestinationGAP>
-          <DestinationEmbung>
+          <DestinationEmbung data-aos="fade-up" data-aos-delay="150">
             <Description>
               <p className="title">Embung Nglanggeran</p>
               <Badge className="badge">
@@ -61,7 +61,7 @@ const ExploreNglanggeran = () => {
               </Badge>
             </Description>
           </DestinationEmbung>
-          <DestinationKedungKandhang>
+          <DestinationKedungKandhang data-aos="fade-up" data-aos-delay="250">
             <Description>
               <p className="title">Air Terjun Kedung Kandhang</p>
               <Badge className="badge">
@@ -134,6 +134,13 @@ const Title = styled.div`
     margin: 0.5rem 0 0 0;
     font-size: 1.15rem;
     font-weight: 500;
+  }
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    .sub-title {
+      text-align: center;
+      font-size: 1rem;
+    }
   }
 `;
 const ExploreWrapper = styled.div`

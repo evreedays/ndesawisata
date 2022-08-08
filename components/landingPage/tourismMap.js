@@ -2,26 +2,35 @@ import React from "react";
 import Image from "next/image";
 import styled from "@emotion/styled";
 import ImageMap from "/public/assets/static/tourismMap.png";
+import Link from "next/link";
 
 const TourismMap = () => {
   return (
     <MapContainer>
       <ContentWrapper>
-        <Description>
-          <h3 className="title">Tourism Map</h3>
+        <Description data-aos="fade-up" data-aos-delay="100">
+          <h3 className="title">Peta Wisata</h3>
           <p className="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien
-            lacus auctor sed pretium pellentesque convallis imperdiet. Nunc,
-            aenean quam enim ultricies integer. Lectus mi quisque rhoncus est
-            massa. At nec libero integer sapien aliquam eu. Semper interdum
-            auctor cras faucibus. Integer molestie adipiscing id aliquet ipsum
-            eget eget vulputate. Mauris.orem ipsum dolor sit amet, consectetur
-            adipiscing elit. Sapien lacus auctor sed pretium pellentesque
-            convallis imperdiet. Nunc, aenean quam enim ultricies integer.
-            Lectus mi quisque rhoncus est massa.
+            Tidak perlu lagi bingung mencari arah untuk mengunjungi destinasi
+            wisata Desa Nglanggeran. Peta Wisata dapat diunduh pada tautan di
+            bawah.
           </p>
+          <Link href="google.com">
+            <a>
+              <div className="button">
+                <p>Unduh Peta Wisata</p>
+              </div>
+            </a>
+          </Link>
         </Description>
-        <Image src={ImageMap} alt="tourism map" width={600} height={412} />
+        <Image
+          src={ImageMap}
+          alt="tourism map"
+          width={600}
+          height={412}
+          data-aos="fade-up"
+          data-aos-delay="100"
+        />
       </ContentWrapper>
     </MapContainer>
   );
@@ -33,12 +42,10 @@ const MapContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 40rem;
-  margin: 0 0 10rem 0;
   background: #fef9f4;
   @media screen and (max-width: 768px) {
     height: 100%;
     padding: 5rem 0;
-    margin: 0;
   }
 `;
 const ContentWrapper = styled.div`
@@ -47,6 +54,7 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 74rem;
+
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0 2rem;
@@ -63,7 +71,33 @@ const Description = styled.div`
     font-size: 1.15rem;
     color: #969696;
   }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 12rem;
+    margin-top: 5rem;
+    border-radius: 40px;
+    border: 2px solid #121212;
+    :hover {
+      background: orange;
+    }
+  }
   @media screen and (max-width: 768px) {
+    .button {
+      margin-top: 2rem;
+      height: 2.5rem;
+      width: 10rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #969696;
+    }
+
     width: 100%;
     margin-bottom: 3rem;
   }

@@ -1,28 +1,61 @@
 import React from "react";
 import Card from "./cardPost";
+import styled from "@emotion/styled";
 
 const Articles = ({ articles }) => {
-  //   const leftArticlesCount = Math.ceil(articles.length / 5);
-  //   const leftArticles = articles.slice(0, leftArticlesCount);
-  //   const rightArticles = articles.slice(leftArticlesCount, articles.length);
-  // console.log(JSON.stringify(articles.thumbnail));
   return (
-    <div>
-      <div className="uk-child-width-1-2@s" data-uk-grid="true">
-        <div>
-          {articles.map((articles, i) => {
+    <GridContainer>
+      <ContentWrapper className="uk-child-width-1-2@s" data-uk-grid="true">
+        <Title> Artikel Terbaru</Title>
+        <CardWrapper>
+          {articles.map((article, i) => {
             return (
               <Card
-                articles={articles}
-                thumbnail={`${articles.thumbnail}`}
-                key={articles.slug}
+                article={article}
+                key={`article__left__${article.attributes.slug}`}
               />
             );
           })}
-        </div>
-      </div>
-    </div>
+        </CardWrapper>
+      </ContentWrapper>
+    </GridContainer>
   );
 };
+
+const GridContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  margin: 10rem 0 1rem 0;
+`;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 78rem;
+`;
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+`;
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
 export default Articles;

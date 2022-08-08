@@ -7,7 +7,7 @@ import { ArrowCircleFill } from "./icons";
 
 const InformationSection = ({ TextTitle, TextDescription }) => {
   return (
-    <InformationContainer>
+    <InformationContainer data-aos="fade-up">
       <InformationWrapper>
         <Title>
           <Link href="">
@@ -74,7 +74,8 @@ const Description = styled.div`
   @media screen and (max-width: 768px) {
     line-height: 1.25rem;
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-size: 0.9rem;
+    font-weight: 500;
   }
 `;
 

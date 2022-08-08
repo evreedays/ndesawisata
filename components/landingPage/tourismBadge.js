@@ -19,34 +19,34 @@ const TourismBadge = () => {
   return (
     <TourismBadgeContainer>
       <BadgesWrapper>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="200" data-aos-once="false">
           <HikingFillWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="250" data-aos-once="false">
           <MountainLineWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="300" data-aos-once="false">
           <PlantWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="350" data-aos-once="false">
           <SunsetWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="400" data-aos-once="false">
           <WaterFallWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="450" data-aos-once="false">
           <CampingWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="500" data-aos-once="false">
           <CampFireWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="550" data-aos-once="false">
           <EmbungWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="600" data-aos-once="false">
           <JeepWhite />
         </Badge>
-        <Badge>
+        <Badge data-aos="fade-up" data-aos-delay="650" data-aos-once="false">
           <HouseWhite />
         </Badge>
       </BadgesWrapper>
@@ -61,7 +61,7 @@ const TourismBadgeContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: auto;
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 `;
 
 const Title = styled.div`
@@ -76,7 +76,7 @@ const BadgesWrapper = styled.div`
   justify-content: space-between;
   width: 55rem;
   height: auto;
-  margin: 0 0 5rem 0;
+  margin: 0 0 3rem 0;
 `;
 const Badge = styled.div`
   display: flex;

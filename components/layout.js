@@ -2,7 +2,7 @@ import Header from "./header";
 import Footer from "./footer";
 import styled from "@emotion/styled";
 
-export default function Layout({ children }) {
+export default function Layout({ children, categories, seo }) {
   return (
     <>
       <Header />

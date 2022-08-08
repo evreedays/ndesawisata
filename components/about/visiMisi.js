@@ -82,10 +82,16 @@ const VisiWrapper = styled.div`
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0 1rem;
-    height: 15rem;
+    height: 12rem;
     flex-direction: column;
     border-radius: 0;
     border: 0;
+    .visi-title {
+      font-size: 1.15rem;
+    }
+    .visi-description {
+      font-size: 0.9rem;
+    }
   }
 `;
 const MisiWrapper = styled.div`
@@ -108,6 +114,20 @@ const MisiWrapper = styled.div`
     text-align: left;
     .list {
       margin-top: 1rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0 1rem;
+    height: auto;
+    flex-direction: column;
+    border-radius: 0;
+    border: 0;
+    .misi-title {
+      font-size: 1.15rem;
+    }
+    .misi-description {
+      font-size: 0.9rem;
     }
   }
 `;

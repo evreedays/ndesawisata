@@ -1,40 +1,49 @@
 import React from "react";
 import Link from "next/link";
-import NextImage from "./image";
-import Image from "next/image";
+import NextImage from "./imageThumbnail";
+import styled from "@emotion/styled";
 
-const Card = ({ articles }) => {
-  // console.log(imageurl);
-
+const Card = ({ article }) => {
   return (
-    <Link href={`/posts/${articles.attributes.slug}`}>
+    <Link href={`/posts/${article.attributes.slug}`}>
       <a className="uk-link-reset">
-        <div className="uk-card uk-card-muted">
-          <div className="uk-card-media-top">
-            {/* <Image
-              src={imageurl}
-              alt="thumbnail"
-            /> */}
-            {/* <div>
-              {imageurl.data?.map((thumbnails) => (
-                <>
-                  <NextImage image={thumbnails.data.attributes.url} />
-                </>
-              ))}
-            </div> */}
-          </div>
-          <div className="uk-card-body">
-            <p id="category" className="uk-text-uppercase">
-              {articles.attributes.kategori}
+        <CardContainer className="uk-card uk-card-muted">
+          <ImageWrapper className="uk-card-media-top">
+            <NextImage image={article.attributes.thumbnail} />
+          </ImageWrapper>
+          <DescriptionWrapper className="uk-card-body">
+            <p id="title" className="title">
+              {article.attributes.title}
             </p>
-          </div>
-          <p id="title" className="uk-text-large">
-            {articles.attributes.title}
-          </p>
-        </div>
+            <p id="headline" className="headline">
+              {article.attributes.headline}
+            </p>
+          </DescriptionWrapper>
+        </CardContainer>
       </a>
     </Link>
   );
 };
+
+const CardContainer = styled.div`
+  width: 17.229rem;
+  height: 24.438rem;
+  margin: 1rem;
+`;
+const ImageWrapper = styled.div``;
+const DescriptionWrapper = styled.div`
+  .title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .headline {
+    height: 4.25rem;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.5rem;
+  }
+`;
 
 export default Card;

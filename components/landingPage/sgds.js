@@ -6,15 +6,16 @@ import SdgLogo from "/public/assets/logos/sdgLogo.png";
 
 const Sdgs = () => {
   return (
-    <SdgsContainer>
+    <SdgsContainer data-aos="fade-up">
       <SdgsContent>
         <Description>
           <Image src={SdgLogo} alt="sdgs" height={40} width={218.54} />
           <p className="description">
-            Loren Ipsum alsdnlsajdn lasjkdnaskjd nasjkd nasjkdnlajsnd
-            aslnjdknasjdnsajdnsan dkjsa ndlhkabs dlkhsbdl kjasndlkjsndlkajsfn
-            iusblkjdnflkjsdfn isukdjfnxlcjkvn dsljknfkjs dfnljsdfn dslkjfn
-            ljdkfnz ldjkfnz kjdfnlkjsdkfn lkjzfn lj
+            Desa Wisata Nglanggeran memenuhi beberapa kategori SDGs dari United
+            Nation Development Programme (UNDP). Sehingga, Desa Wisata
+            Nglanggeran meraih penghargaan Desa Wisata Terbaik Dunia 2021 dari
+            Organisasi Pariwisata Dunia atau United Nation World Tourism
+            Organization (UNWTO).
           </p>
         </Description>
         <Image src={SdgsBadge} alt="sdgs" height={152} width={316} />
@@ -65,7 +66,7 @@ const Description = styled.div`
   text-overflow: ellipsis;
   .description {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: #555555;
   }

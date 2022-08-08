@@ -7,13 +7,6 @@ export default class Video extends React.Component {
     return (
       <VideoContainer>
         <ContentContainer>
-          <DescriptionWrapper>
-            <h3 className="title">desa wisata nglanggeran</h3>
-            <p className="description">
-              Nglanggeran, Kecamatan Patuk, Kabupaten Gunung Kidul, Daerah
-              Istimewa Yogyakarta,
-            </p>
-          </DescriptionWrapper>
           <VideoWrapper>
             <ReactPlayer
               url="https://youtu.be/pkOi9gXlSZQ"
@@ -24,6 +17,13 @@ export default class Video extends React.Component {
               controls={false}
             />
           </VideoWrapper>
+          <DescriptionWrapper>
+            <h3 className="title">desa wisata nglanggeran</h3>
+            <p className="description">
+              Nglanggeran, Kecamatan Patuk, Kabupaten Gunung Kidul, Daerah
+              Istimewa Yogyakarta,
+            </p>
+          </DescriptionWrapper>
         </ContentContainer>
       </VideoContainer>
     );
@@ -67,7 +67,7 @@ const DescriptionWrapper = styled.div`
   align-items: flex-start;
   height: 100%;
   width: 100%;
-  margin-right: 2rem;
+  margin-left: 5rem;
   .title {
     text-transform: capitalize;
     font-size: 2.5rem;
@@ -79,7 +79,8 @@ const DescriptionWrapper = styled.div`
   }
   /* web views */
   @media screen and (max-width: 768px) {
-    margin-right: 0;
+    margin-left: 0;
+    margin-top: 1rem;
     align-items: center;
     text-align: center;
     padding: 0 0.5rem;

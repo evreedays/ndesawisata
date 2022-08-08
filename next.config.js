@@ -1,9 +1,10 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  env: {
-    API_URL: process.env.API_URL,
+  images: {
+    loader: "default",
+    domains: ["Localhost"],
   },
 };
 

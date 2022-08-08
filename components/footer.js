@@ -52,7 +52,9 @@ const Footer = () => {
         </Description>
       </FooterWrapper>
       <CopywrightWrapper>
-        <p>©️ 2022 KKN-PPM UGM Periode 2, Pokdarwis Kalisongo</p>
+        <p className="copywriting">
+          ©️ 2022 KKN-PPM UGM Periode 2, Pokdarwis Kalisongo
+        </p>
       </CopywrightWrapper>
     </FooterContainer>
   );
@@ -169,13 +171,22 @@ const CopywrightWrapper = styled.div`
   width: 100%;
   padding: 0 8rem;
   height: 4rem;
-  flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   background: #ffffff;
   border-top: 1px solid #e6e6e6;
   font-size: 0.9rem;
   font-weight: 500;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+    .copywriting {
+      font-size: 0.9rem;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 export default Footer;

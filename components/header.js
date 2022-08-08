@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import Image from "next/image";
 
 // components
 import SideDrawer from "/components/mobile/sideDrawer";
 // Icons
 import MenuBars from "/components/mobile/menuBars";
-import { LogoNdesawisata } from "./icons";
-
+import LogoGAP from "/public/assets/logos/Logo_GAP.jpg";
 class Header extends React.Component {
   //State To to hide Nav when scrolling down
 
@@ -49,9 +49,10 @@ class Header extends React.Component {
         <HeaderContent className={this.state.show ? "active" : "hidden"}>
           <Link href="/">
             <a>
-              <Logo>
+              <Image src={LogoGAP} alt="logo gap" width={36} height={36} />
+              {/* <Logo>
                 <LogoNdesawisata />
-              </Logo>
+              </Logo> */}
             </a>
           </Link>
           <MenuBars click={this.sideMenuToggleHandler} />
@@ -67,7 +68,7 @@ class Header extends React.Component {
                 <Button type="button">About Us</Button>
               </a>
             </Link>
-            <Link href="destinasi">
+            {/* <Link href="destinasi">
               <a>
                 <Button type="button">Destinasi Wisata</Button>
               </a>
@@ -96,7 +97,7 @@ class Header extends React.Component {
               <a>
                 <Button type="button">Oleh-Oleh</Button>
               </a>
-            </Link>
+            </Link> */}
           </Navigation>
         </HeaderContent>
       </HeaderContainter>
@@ -135,7 +136,8 @@ const HeaderContent = styled.div`
 `;
 const Navigation = styled.nav`
   display: flex;
-  width: 50rem;
+  /* width: 50rem; */
+  width: 10rem;
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-around;
@@ -156,11 +158,6 @@ const Navigation = styled.nav`
     background: rgba(0, 0, 0, 0.8);
     display: none;
   }
-`;
-const Logo = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
 `;
 
 const Button = styled.button`
