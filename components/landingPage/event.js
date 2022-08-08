@@ -6,7 +6,7 @@ const Event = () => {
   return (
     <EventContainer>
       <Title>
-        <p>Event</p>
+        <p className="title">Event</p>
       </Title>
       <VideoWrapper>
         <ReactPlayer
@@ -30,7 +30,13 @@ const EventContainer = styled.div`
   height: auto;
   margin: 8rem 0 5rem 0;
 `;
-const Title = styled.div``;
+const Title = styled.div`
+  margin-bottom: 3rem;
+  .title {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+`;
 const VideoWrapper = styled.div`
   display: flex;
   @media screen and (max-width: 768px) {
