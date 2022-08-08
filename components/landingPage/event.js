@@ -12,7 +12,7 @@ const Event = () => {
         <ReactPlayer
           url="https://www.youtube.com/watch?v=79S-ZJoXRsU"
           className="youtube-player"
-          playing
+          playing={false}
           width="560px"
           height="315px"
           controls={false}

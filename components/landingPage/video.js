@@ -11,7 +11,7 @@ export default class Video extends React.Component {
             <ReactPlayer
               url="https://youtu.be/pkOi9gXlSZQ"
               className="youtube-player"
-              playing
+              playing={false}
               width="560px"
               height="315px"
               controls={false}
