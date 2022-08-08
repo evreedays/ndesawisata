@@ -7,6 +7,9 @@ const Event = () => {
     <EventContainer>
       <Title>
         <p className="title">Event</p>
+        <p className="sub-title">
+          Ikuti event rutin yang ada di Desa Wisata Nglanggeran
+        </p>
       </Title>
       <VideoWrapper>
         <ReactPlayer
@@ -33,6 +36,10 @@ const EventContainer = styled.div`
 const Title = styled.div`
   margin-bottom: 3rem;
   .title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .sub-title {
     font-size: 1.15rem;
     font-weight: 600;
   }
